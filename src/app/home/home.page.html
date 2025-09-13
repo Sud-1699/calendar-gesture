@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Calendar Swipe Gesture
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleChange()">
+        <ion-icon slot="icon-only" [name]="paletteIcon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollY]="false">
+  <ion-grid class="Calendar-toolbar">
+    <div class="chip-content">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col class="ion-text-end">
+            <ion-label class="month-label">
+              {{ dateLabel | date: "MMMM yyyy" }}
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <app-custom-calendar [weekView]="weekView" [presentation]="'YYYY-MM-DD'" [firstDayOfWeek]="1" [(date)]="currentDate" (emitChange)="changeDate()" (emitDateLabel)="changeDateLabel($event)"></app-custom-calendar>
+  </ion-grid>
+  
+  <app-slide-drawer [contentHeight]="contentHeight" [minOpenHeight]="140" [maxOpenHeight]="165" [minViewHeight]="430" [maxViewHeight]="260" (slideYEvent)="changeCalendarView($event)"></app-slide-drawer>
+</ion-content>

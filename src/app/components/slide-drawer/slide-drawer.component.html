@@ -1,0 +1,14 @@
+<ion-header [id]="slideId" class="ion-no-border slider-header">
+  <ion-toolbar mode="md">
+    <ion-buttons class="ion-justify-content-center">
+      <ion-button disabled="true" expand="full">
+        <ion-icon slot="icon-only" name="remove"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+@let height = contentHeight();
+<ion-content [style.height]="height">
+  <ng-content></ng-content>
+</ion-content>

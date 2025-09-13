@@ -1,0 +1,31 @@
+:host {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: calc(100vh - 144px);
+  z-index: 9999;
+
+  ion-header.slider-header {
+    ion-toolbar {
+      --background: var(--ion-color-light);
+      --min-height: 20px
+      --border-width: 0 0 0.55px;
+      &:first-of-type {
+        padding-top: 0px !important;
+      }
+
+      ion-buttons {
+        height: 20px;
+        
+        ion-button {
+          height: 20px;
+          width: 100%;
+
+          ion-icon {
+            font-size: 60px;
+          }
+        }
+      }
+    }
+  }
+}

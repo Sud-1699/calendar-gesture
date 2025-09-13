@@ -1,0 +1,7 @@
+{
+  "name": "calender-gesture",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

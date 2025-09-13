@@ -1,0 +1,64 @@
+swiper-container::part(pagination) {
+  display: none;
+}
+
+.month-grid {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(auto-fill, 1fr);
+  gap: 0px 0px;
+  padding: 0 4px 4px 4px;
+  
+  div {
+    text-align: center;
+  }
+  
+  .fade-day {
+    opacity: 0.5;
+  }
+}
+
+.day button {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: -apple-system, sans-serif;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  min-height: 2em;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-align: center;
+  width: 65%;
+  height: 70%;
+  color: var(--ion-text-color);
+}
+
+.day button[disabled] {
+  cursor: default;
+}
+
+.day button.today {
+  color: var(--ion-color-primary);
+  border: 1px solid var(--ion-color-primary);
+  border-radius: 100%;
+}
+
+.day button.selected {
+  background-color: var(--ion-color-primary);
+  color: #fff;
+  border-radius: 100%;
+}
+
+.day p {
+  margin: 0;
+  padding-top: 0.36em;
+  padding-bottom: 0.36em;
+  font-size: 15px;
+  font-weight: 700;
+}

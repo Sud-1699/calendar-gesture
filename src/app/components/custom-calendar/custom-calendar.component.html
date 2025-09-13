@@ -1,0 +1,78 @@
+<!-- calendar day -->
+<div class="month-grid">
+  <div class="day"></div>
+  @for (title of dayTitle; track $index) {
+    <div class="day" [class.fade]="false">
+      <p class="label">
+        {{ title }}
+      </p>
+    </div>
+  }
+</div>
+
+<!-- calender view -->
+@if (!weekView()) {
+  <swiper-container #calendar [slidesPerView]="1" [pagination]="true" (touchend)="changeCalendar($event)">
+    @for (calendar of calendars; track $index) {
+      <swiper-slide>
+        @for (weeks of calendar; track $index; let i = $index) {
+          <div class="month-grid">
+            <div class="day">
+              <p class="week">
+                {{ numberOfWeeks[i] }}
+              </p>
+            </div>
+            
+            @for (day of weeks; track $index) {
+              <div class="day" [class.fade]="day.fade">
+                <button
+                  [class.selected]="day.selected"
+                  [class.today]="day.today"
+                  [attr.data-date]="day.date"
+                  [attr.data-month]="day.month"
+                  [attr.data-year]="day.year"
+                  [attr.data-data]="day.data"
+                  [disabled]="day.date === null"
+                  (click)="selectDate(day, false)"
+                >
+                  {{ day.date }}
+                </button>
+              </div>
+            }
+          </div>
+        }
+      </swiper-slide>
+    }
+  </swiper-container>
+} @else {
+  <swiper-container #week [slidesPerView]="1" [pagination]="true" (touchend)="changeWeek($event)">
+    <swiper-slide>
+      @for (week of weeks; track $index; let i = $index) {
+        <div class="month-grid">
+          <div class="day">
+            <p class="week">
+              {{ numberOfWeek }}
+            </p>
+          </div>
+
+          @for (day of week; track $index) {
+            <div class="day" [class.fade]="day.fade">
+              <button
+                [class.selected]="day.selected"
+                [class.today]="day.today"
+                [attr.data-date]="day.date"
+                [attr.data-month]="day.month"
+                [attr.data-year]="day.year"
+                [attr.data-data]="day.data"
+                [disabled]="day.date === null"
+                (click)="selectDate(day, true)"
+              >
+                {{ day.date }}
+              </button>
+            </div>
+          }
+        </div>
+      }
+    </swiper-slide>
+  </swiper-container>
+}

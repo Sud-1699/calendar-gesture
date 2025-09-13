@@ -1,0 +1,15 @@
+.calendar-toolbar {
+  min-height: 25px;
+  margin-top: -10px;
+
+  .chip-content {
+    ion-row {
+      margin: 20px 0 10px 0;
+    }
+
+    .month-label {
+      font-size: 15px;
+      font-weight: 700;
+    }
+  }
+}
