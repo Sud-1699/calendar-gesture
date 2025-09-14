@@ -26,8 +26,14 @@
       </ion-grid>
     </div>
 
-    <app-custom-calendar [weekView]="weekView" [presentation]="'YYYY-MM-DD'" [firstDayOfWeek]="1" [(date)]="currentDate" (emitChange)="changeDate()" (emitDateLabel)="changeDateLabel($event)"></app-custom-calendar>
+    <app-custom-calendar [weekView]="weekView" [presentation]="'yyyy-MM-dd'" [firstDayOfWeek]="1" [(date)]="currentDate" (emitChange)="changeDate()" (emitDateLabel)="changeDateLabel($event)"></app-custom-calendar>
   </ion-grid>
   
-  <app-slide-drawer [contentHeight]="contentHeight" [minOpenHeight]="140" [maxOpenHeight]="165" [minViewHeight]="430" [maxViewHeight]="260" (slideYEvent)="changeCalendarView($event)"></app-slide-drawer>
+  <app-slide-drawer [contentHeight]="contentHeight" [minOpenHeight]="140" [maxOpenHeight]="165" [minViewHeight]="430" [maxViewHeight]="260" (slideYEvent)="changeCalendarView($event)">
+    <div class="content-container">
+      <h4>
+        Date selected - {{ currentDate | date: "dd MMMM yyyy"}}
+      </h4>
+    </div>
+  </app-slide-drawer>
 </ion-content>

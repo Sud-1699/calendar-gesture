@@ -228,7 +228,7 @@ export class CustomCalendarComponent implements OnInit {
   }
 
   public changeWeek = (event: any) => {
-    console.log(`changeCalendar: event: `, event);
+    console.log(`changeWeek: event: `, event);
 
     const swiperDetail: Swiper = (event as CustomEvent).detail[0];
     if (!swiperDetail) return;
@@ -247,7 +247,7 @@ export class CustomCalendarComponent implements OnInit {
         this.reRenderCalendarOrWeek(startOfPrevWeek, true, true);
         break;
       case 'next':
-        let startOfNextWeek = new Date(this.weeks[0][0].data);
+        let startOfNextWeek = new Date(this.weeks[0][6].data);
         startOfNextWeek.setDate(startOfNextWeek.getDate() + 1);
         let endOfNextWeek = new Date(startOfNextWeek);
         endOfNextWeek.setDate(startOfNextWeek.getDate() + 6);

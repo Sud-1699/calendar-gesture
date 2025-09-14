@@ -49,6 +49,8 @@ export class HomePage implements OnInit {
       sunny,
       moon
     });
+
+    this.currentDate = new Date().toISOString();
   }
 
   ngOnInit(): void {
@@ -78,11 +80,13 @@ export class HomePage implements OnInit {
   private toggleDarkPalette = (shouldAdd: boolean) => document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
 
   public changeDate = () => {
-    console.log('changeDate: updated date: ', this.currentDate)
+    console.log('changeDate: updated date: ', this.currentDate);
+    this.cd.detectChanges();
   }
 
   public changeDateLabel = (value: string) => {
     this.dateLabel = value;
+    this.cd.detectChanges();
   }
 
   public changeCalendarView = (slideY: number) => {

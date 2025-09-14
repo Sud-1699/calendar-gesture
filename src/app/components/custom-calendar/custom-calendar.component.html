@@ -12,7 +12,7 @@
 
 <!-- calender view -->
 @if (!weekView()) {
-  <swiper-container #calendar [slidesPerView]="1" [pagination]="true" (touchend)="changeCalendar($event)">
+  <swiper-container #calendar [slidesPerView]="1" [pagination]="true" (swipertouchend)="changeCalendar($event)">
     @for (calendar of calendars; track $index) {
       <swiper-slide>
         @for (weeks of calendar; track $index; let i = $index) {
@@ -45,7 +45,7 @@
     }
   </swiper-container>
 } @else {
-  <swiper-container #week [slidesPerView]="1" [pagination]="true" (touchend)="changeWeek($event)">
+  <swiper-container #week [slidesPerView]="1" [pagination]="true" (swipertouchend)="changeWeek($event)">
     <swiper-slide>
       @for (week of weeks; track $index; let i = $index) {
         <div class="month-grid">

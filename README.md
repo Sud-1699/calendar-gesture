@@ -1,0 +1,18 @@
+# Calendar Gesture
+
+A mobile based swipe able calendar with gesture feature using Ionic along with angular and capacitor for mobile. And for gesture using swiper.js technology.
+
+### Prerequisites
+```
+Node.JS (v20+)
+Angular (v19+)
+Ionic (v7+)
+```
+
+### How to run the application ?
+```
+npm install
+npm run serve
+```
+
+

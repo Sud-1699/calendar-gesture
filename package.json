@@ -32,7 +32,7 @@
     "date-fns": "^4.1.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
-    "swiper": "^11.2.10",
+    "swiper": "^12.0.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
@@ -64,5 +64,5 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.8.0"
   },
-  "description": "An mobile based swipe able calendar with gesture feature"
+  "description": "A mobile based swipe able calendar with gesture feature"
 }
